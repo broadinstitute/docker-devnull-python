@@ -1,0 +1,27 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+black = "*"
+bump2version = "*"
+codecov = "*"
+coverage = "*"
+fixtures = "*"
+flake8 = "*"
+green = "*"
+mock = "*"
+pydocstyle = "*"
+pylama = "*"
+pylint = "*"
+pyyaml = "*"
+setuptools = "*"
+testtools = "*"
+twine = "*"
+unittest2 = "*"
+wheel = "*"
+yamllint = "*"
+
+[pipenv]
+allow_prereleases = true
