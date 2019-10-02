@@ -1,0 +1,31 @@
+{
+    "name": "Python 3",
+    "image": "broadinstitute/devnull-vscode-python",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylamaEnabled": true,
+        "python.linting.pylamaPath": "pylama",
+        "python.formatting.provider": "black"
+    },
+    "extensions": [
+        "bierner.markdown-preview-github-styles",
+        "coenraads.bracket-pair-colorizer",
+        "compulim.indent4to2",
+        "davidanson.vscode-markdownlint",
+        "deerawan.vscode-whitespacer",
+        "editorconfig.editorconfig",
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "njpwerner.autodocstring",
+        "riccardonovaglia.missinglineendoffile",
+        "sandcastle.whitespace",
+        "timonwong.shellcheck",
+        "wholroyd.jinja",
+        "wwm.better-align"
+    ],
+    "runArgs": [
+        "--rm"
+    ]
+}

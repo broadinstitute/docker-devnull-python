@@ -1,3 +1,6 @@
+# Pull the shellcheck image so we can fetch out the shellcheck binary
+FROM koalaman/shellcheck-alpine:latest as shellcheck
+
 FROM python:3.7-alpine
 
 ENV PIPENV_NOSPIN=1 \
@@ -14,6 +17,8 @@ ARG USER_GID=$USER_UID
 
 COPY Pipfile /tmp/
 
+COPY --from=shellcheck /bin/shellcheck /bin/shellcheck
+
 RUN apk update \
     && apk add bash curl dialog g++ gcc git iproute2 libffi-dev libssl1.1 libxml2-dev \
         libxslt-dev make musl-dev openssh-client openssl-dev procps sudo \
@@ -23,11 +28,12 @@ RUN apk update \
     && pipenv install --system \
     && addgroup -g $USER_GID $USERNAME \
     && adduser -D -s /bin/bash -u $USER_UID -G $USERNAME $USERNAME \
-    # [Optional] Add sudo support for the non-root user
-#    && apt-get install -y sudo \
-#    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-#    && chmod 0440 /etc/sudoers.d/$USERNAME \
+    && chmod 755 /bin/shellcheck \
     && rm -rf /root/.cache \
     && rm -rf /tmp/* \
     && rm -rf /var/cache/apk/* \
     && rm -rf /var/tmp/*
+    # [Optional] Add sudo support for the non-root user
+#    && apt-get install -y sudo \
+#    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+#    && chmod 0440 /etc/sudoers.d/$USERNAME \
