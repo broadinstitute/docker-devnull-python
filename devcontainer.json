@@ -10,6 +10,7 @@
         "python.formatting.provider": "black"
     },
     "extensions": [
+        "batisteo.vscode-django",
         "bierner.markdown-preview-github-styles",
         "coenraads.bracket-pair-colorizer",
         "compulim.indent4to2",
