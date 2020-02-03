@@ -1,7 +1,7 @@
 # Pull the shellcheck image so we can fetch out the shellcheck binary
 FROM koalaman/shellcheck-alpine:latest as shellcheck
 
-FROM python:3.7-alpine
+FROM python:3.8-alpine
 
 ENV PIPENV_NOSPIN=1 \
     PIPENV_HIDE_EMOJIS=1 \
