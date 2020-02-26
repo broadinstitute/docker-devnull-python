@@ -12,6 +12,7 @@
     "extensions": [
         "batisteo.vscode-django",
         "bierner.markdown-preview-github-styles",
+        "bungcip.better-toml",
         "coenraads.bracket-pair-colorizer",
         "compulim.indent4to2",
         "davidanson.vscode-markdownlint",
