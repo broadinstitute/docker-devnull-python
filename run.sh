@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_IMAGE='broadinstitute/devnull-python:latest'
+DOCKER_IMAGE='broadinstitute/devnull-vscode-python:latest'
 SUDO=
 
 usage() {
@@ -25,4 +25,5 @@ fi
 
 $SUDO docker run $TTY --rm \
     -v "$( pwd )":/usr/src \
+    -w /usr/src \
     $DOCKER_IMAGE "$@"
