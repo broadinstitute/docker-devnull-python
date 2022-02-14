@@ -1,7 +1,7 @@
 # Pull the shellcheck image so we can fetch out the shellcheck binary
 FROM koalaman/shellcheck:latest as shellcheck
 
-FROM python:3.8-slim
+FROM python:3.10-slim
 
 # This Dockerfile adds a non-root 'vscode' user with sudo access. However, for Linux,
 # this user's GID/UID must match your local user UID/GID to avoid permission issues
