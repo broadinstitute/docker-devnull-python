@@ -10,7 +10,7 @@ homepage = "https://github.com/broadinstitute/docker-devnull-vscode-python"
 keywords = ["docker", "vscode", "python"]
 
 [tool.poetry.dependencies]
-python = "^3.6"  # Compatible python versions must be declared here
+python = "^3.7"  # Compatible python versions must be declared here
 
 # Python specific dependencies with prereleases allowed
 black = { version = "^19.0", allow-prereleases = true }
